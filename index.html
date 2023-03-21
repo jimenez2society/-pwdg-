@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>!pwdg~</title>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <span class="logo">pwd</span>
+      </header>
+      <section class="generator">
+        <h2>Generate a unique password</h2>
+
+        <div class="generator__content">
+          <form class="generator__form">
+            <div class="formGroup">
+              <input
+                type="number"
+                name="length"
+                id="length"
+                placeholder="Length"
+                min="8"
+                max="128"
+                value="8"
+              />
+            </div>
+            <div class="formGroup">
+              <input
+                id="lowercase"
+                name="checkbox"
+                class="checkbox--hidden"
+                type="checkbox"
+                value="lowercase"
+              />
+              <label for="lowercase" class="checkbox"></label>
+              <p class="checkbox__label">Lowercase letters</p>
+            </div>
+            <div class="formGroup">
+              <input
+                id="uppercase"
+                name="checkbox"
+                class="checkbox--hidden"
+                type="checkbox"
+                value="uppercase"
+              />
+              <label for="uppercase" class="checkbox"></label>
+              <p class="checkbox__label">Uppercase letters</p>
+            </div>
+            <div class="formGroup">
+              <input
+                id="numeric"
+                name="checkbox"
+                class="checkbox--hidden"
+                type="checkbox"
+                value="numeric"
+              />
+              <label for="numeric" class="checkbox"></label>
+              <p <p class="checkbox__label">Numerical Digits</p>
+            </div>
+            <div class="formGroup">
+              <input
+                id="specialCharacters"
+                name="checkbox"
+                class="checkbox--hidden"
+                type="checkbox"
+                value="specialCharacters"
+              />
+
+              <label for="specialCharacters" class="checkbox"></label>
+              <p class="checkbox__label">Special Characters</p>
+            </div>
+
+            <button type="submit" id="generateButton">Generate</button>
+            <span class="error"></span>
+          </form>
+          <div class="generated-password">
+            <span class="g-password"
+              >Your generated password will appear here</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
