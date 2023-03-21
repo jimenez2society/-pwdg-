@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Sono&display=swap");
+
+:root {
+  --background-theme-light: #e6e6e6;
+  --background-theme-dark: #202020;
+  --background-theme-light-secondary: #ffffff;
+  --background-theme-dark-secondary: #555555;
+
+  --border-theme-light: 1px solid rgba(128, 128, 128, 0.603);
+  --font-family-main: "Roboto", sans-serif;
+
+  --border-round: 500px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: var(--background-theme-light);
+  color: var(--background-theme-dark);
+}
+body.dark {
+  background-color: var(--background-theme-dark);
+  color: var(--background-theme-light);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input,
+option,
+select,
+optgroup,
+textarea {
+  font-family: var(--font-family-main);
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 0;
+}
