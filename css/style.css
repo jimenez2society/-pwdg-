@@ -94,7 +94,6 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 10px solid rgb(77, 223, 77);
   position: absolute;
   top: 100px;
   left: 80px;
@@ -134,4 +133,74 @@ textarea {
 .generator h2 {
   font-weight: 200;
   margin-bottom: 3.2rem;
+}
+
+.checkbox {
+  display: inline-block;
+  border: 1px solid rgba(36, 36, 36, 0.63);
+  width: 16px;
+  height: 16px;
+  border-radius: 400px;
+  position: relative;
+  box-shadow: 0px 0px 8px transparent;
+  cursor: pointer;
+}
+.checkbox--hidden {
+  display: none;
+}
+.error {
+  color: rgba(255, 25, 25, 0.801);
+  visibility: visible;
+  opacity: 1;
+  transition: 5s;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  cursor: default;
+}
+
+input[type="number"] {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  padding-left: 0.8rem;
+  border-radius: 4px;
+  border: var(--border-theme-light);
+}
+
+.formGroup:hover > .checkbox {
+  border: 1px solid rgba(26, 1, 23, 0.61);
+}
+
+.formGroup input[type="number"] {
+  margin-bottom: 2rem;
+}
+.formGroup:not(input[type="number"]):not(:last-child) {
+  margin-bottom: 1rem;
+}
+.checkbox + p {
+  color: rgba(150, 150, 150, 0.664);
+}
+.checkbox--hidden:checked + .checkbox + p {
+  color: var(--background-theme-dark);
+}
+.checkbox--hidden:checked + .checkbox {
+  box-shadow: 0px 0px 8px rgba(255, 134, 245, 0.61);
+}
+.checkbox--hidden:checked + .checkbox::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background-color: rgb(253, 2, 232);
+  border: 2px solid var(--background-theme-light-secondary);
+  border-radius: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }

@@ -1,20 +1,15 @@
-//
-
+import { query } from "./DomHelper.js";
+import Password from "./Password.js";
 import Toast from "./Toast.js";
 
-let onPasswordGenerate = new Toast();
+let toast = new Toast();
+
+let ids = ["lowercase", "uppercase", "numeric", "specialCharacters"];
+
 function showGeneratedPassword() {
   let password = generatePassword();
-  document.querySelector(".generated-password--text").innerHTML = password;
+  console.log(password);
 }
-function generatePassword() {
-  return "TESTING";
-}
-function gatherPasswordRestriction() {}
+function generatePassword() {}
 
-document.querySelector(".logo").addEventListener("click", (e) => {
-  onPasswordGenerate.activateSuccess("Generated password successfully");
-});
-document.querySelector(".toast--cancel").addEventListener("click", (e) => {
-  onPasswordGenerate.deactivateToast();
-});
+
