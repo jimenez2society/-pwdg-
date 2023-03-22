@@ -127,8 +127,12 @@ textarea {
   justify-content: center;
   border: 1px dotted black;
   cursor: pointer;
-
   margin-left: 1.2rem;
+}
+.generated-password--text {
+  font-size: 12px;
+  word-wrap: break-word;
+  max-width: 500px;
 }
 .generator h2 {
   font-weight: 200;

@@ -2,18 +2,24 @@ export default class Password {
   constructor(trueOptions, length) {
     this.trueOptions = trueOptions;
     this.length = length;
-    this.letters = "abcdefghijklmnopqrstuvwxyz";
-    this.numbers = "0123456789";
-    this.specials = `~!@#$%^&*()_+=}{[]|/\\?'",.<>`;
+    this.allOptions = {
+      lowers: "abcdefghijklmnopqrstuvwxyz",
+      uppers: "abcdefghijklmnopqrstuvwxyz".toUpperCase(),
+      numeric: "0123456789",
+      specials: `~!@#$%^&*()_+=}{[]|/\\?'",.<>`,
+    };
+
     this.errors = null;
   }
   generate() {
-    console.log(this.specials);
-    let trueOptions = this.trueOptions.map((opt) => [opt, opt]);
-    const entries = new Map([...trueOptions]);
-    trueOptions = Object.fromEntries(entries);
+    let trueOptionValues = this.trueOptions
+      .map((option) => this.allOptions[option])
+      .join("");
     let genPassword = [];
-    trueOptions = { ...trueOptions, length: Number(this.length) };
+    if (!this.trueOptions.length > 0) {
+      this.errors = { errMsg: "Please select atleast one option" };
+      return this.errors;
+    }
     if (typeof this.length !== "number") {
       this.errors = { errMsg: "Length should be a number" };
       return this.errors;
@@ -26,9 +32,10 @@ export default class Password {
     } else {
       this.errors = null;
 
-      for (let i = 0; i <= trueOptions.length - 1; i++) {
-        genPassword.push(this.radomize(this.letters));
+      for (let i = 0; i <= this.length - 1; i++) {
+        genPassword.push(this.radomize(trueOptionValues));
       }
+
       return genPassword.join("");
     }
   }

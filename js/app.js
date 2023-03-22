@@ -1,17 +1,23 @@
-import { query } from "./lib/DomHelper.js";
 import Password from "./helpers/Password.js";
+import { query } from "./lib/DomHelper.js";
 import Toast from "./Toast.js";
 
 let toast = new Toast();
-
-let ids = ["lowercase", "uppercase", "numeric", "specialCharacters"];
-
+let generateButton = query("#generateButton");
+let genForm = query(".generator__form");
+let ids = ["lowers", "uppers", "numeric", "specials"];
+genForm.preventDefault();
+generateButton.click(showGeneratedPassword);
 function showGeneratedPassword() {
   let password = generatePassword();
   console.log(password);
 }
-function generatePassword() {}
+function generatePassword() {
+  let trueOptions = ids.filter((id) => query(`#${id}`).isChecked());
+  console.log(trueOptions);
+  let length = Number(query("#length").getValue());
+  let newPassword = new Password(trueOptions, length);
+  return newPassword.generate();
+}
 
-
-let p = new Password({},10)
-p.generate()
+query(".toast--cancel").click(() => toast.deactivateToast());

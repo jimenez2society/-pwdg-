@@ -9,7 +9,8 @@ export default class Toast {
     this.toast.classList.add("active");
     this.toast.classList.remove("toast--error");
     this.toast.classList.add("toast--success");
-    setTimeout(() => {
+
+    let timer = setTimeout(() => {
       this.toast.classList.remove("toast--success");
       this.toast.classList.remove("active");
     }, 4000);
