@@ -13,4 +13,5 @@ function showGeneratedPassword() {
 function generatePassword() {}
 
 
-
+let p = new Password({},10)
+p.generate()
