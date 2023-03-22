@@ -1,5 +1,5 @@
-import { query } from "./DomHelper.js";
-import Password from "./Password.js";
+import { query } from "./lib/DomHelper.js";
+import Password from "./helpers/Password.js";
 import Toast from "./Toast.js";
 
 let toast = new Toast();
@@ -11,5 +11,6 @@ function showGeneratedPassword() {
   console.log(password);
 }
 function generatePassword() {}
+
 
 
