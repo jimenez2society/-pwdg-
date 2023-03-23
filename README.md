@@ -19,7 +19,7 @@
 
 ### **The query function**
 
-## #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
+#### #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
 
 #### In my code you will see this function named `query`. I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
 
