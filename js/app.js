@@ -11,6 +11,12 @@ generateButton.click(showGeneratedPassword);
 function showGeneratedPassword() {
   let password = generatePassword();
   console.log(password);
+  if (!password.errMsg) {
+    query(".generated-password--text").addText(password);
+    toast.activateSuccess("Generated password successfully");
+    return;
+  }
+  toast.activateError(password.errMsg);
 }
 function generatePassword() {
   let trueOptions = ids.filter((id) => query(`#${id}`).isChecked());

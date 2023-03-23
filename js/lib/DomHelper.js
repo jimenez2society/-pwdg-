@@ -1,3 +1,5 @@
+//  *** DISCLAIMER *** This only works on one element at a time.
+
 const query = (element) => {
   //setting el to get an element that is passed through the parameter of query
   let el = document.querySelector(element);
