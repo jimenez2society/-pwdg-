@@ -19,7 +19,7 @@
 
 ### **The query function**
 
-### #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
+## #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
 
 #### In my code you will see this function named `query`. I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
 
@@ -126,7 +126,7 @@ Reflect.get(myNewObject,'name')
 
 - #### I didn't go over the `set` property because I didn't use it in this project but if you are curious here is link that goes in detail [MDN handler.set()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set)
 
-- #### Overall I had fun creating this function to help me with my DOM manipulation in this app. I was able to learn more about how a javascript proxy is used and what it can do. I look forward to learning more about it and continue my research on the pros and cons of a javascript proxy
+- #### Overall I had fun creating this function to help me with my DOM manipulation in this app. I was able to learn more about how a javascript proxy is used and what it can do. I just know that there is so much more that can be done with a javascript proxy and can't wait to learn more
 
 ### This app is responsive to mobile.
 
