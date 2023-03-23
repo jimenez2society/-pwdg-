@@ -15,7 +15,7 @@ const query = (element) => {
           };
           break;
         case "addText":
-          // getting a property with the name of "addText" returns a function. we can then pass some data to add to the current element
+          // getting a property with the name of "addText" returns a function. we can then pass some data to add to the innerText of the current element
           obj[prop] = (data) => {
             el.innerText = data;
           };
@@ -30,19 +30,19 @@ const query = (element) => {
           break;
 
         case "getValue":
-          // getting a property with the name of "getValue" returns a function. Mainly for a inputs, this function returns the value of a selected input element
+          // getting a property with the name of "getValue" returns a function. Mainly for inputs, this function returns the value of a selected input element
           obj[prop] = () => {
             return el.value;
           };
           break;
         case "isChecked":
-          // getting a property with the name of "isChecked" returns a function. Mainly for a checkboxes, this function returns the checked value of a selected checkbox
+          // getting a property with the name of "isChecked" returns a function. Mainly for checkboxes, this function returns the checked value of a selected checkbox
           obj[prop] = () => {
             return el.checked;
           };
           break;
         case "unCheck":
-          // getting a property with the name of "unCheck" returns a function. Mainly for a checkboxes, this function sets the checked property on the current element to false
+          // getting a property with the name of "unCheck" returns a function. Mainly for checkboxes, this function sets the checked property on the current element to false
           obj[prop] = () => {
             el.checked = false;
           };
@@ -56,9 +56,11 @@ const query = (element) => {
 
         default:
           // return target
-          return obj[prop];
+          return Reflect.get(obj, prop);
+        // obj[prop];
       }
-      return obj[prop];
+      return Reflect.get(obj, prop);
+      // obj[prop];
     },
   });
   //   return the whole proxy

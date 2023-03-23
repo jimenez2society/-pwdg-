@@ -10,16 +10,19 @@
   </head>
   <body>
     <main class="container">
+      <!-- the toast is only shown on certain events, mainly when the password was genrated successfully or not -->
       <div class="toast">
+        <!-- x to close toast -->
         <span class="toast--cancel">X</span>
         <p class="toast--text">Password generated successfully!</p>
       </div>
       <header class="header">
-        <span class="logo">pwd</span>
+        <!-- main logo -->
+        <span class="logo">!pwdg~</span>
       </header>
       <section class="generator">
         <h2>Generate a unique password</h2>
-
+        <!-- form container with the form -->
         <div class="generator__content">
           <form class="generator__form">
             <div class="formGroup">
@@ -78,10 +81,10 @@
               <label for="specials" class="checkbox"></label>
               <p class="checkbox__label">Special Characters</p>
             </div>
-
+            <!-- submit button -->
             <button type="submit" id="generateButton">Generate</button>
-            <span class="error"></span>
           </form>
+          <!-- the container when the password was successfully generated -->
           <div class="generated-password">
             <span class="generated-password--text"
               >Your generated password will appear here</span
@@ -90,7 +93,9 @@
         </div>
       </section>
     </main>
+    <!-- adding the prototypes.js file to allow use of custom prototype methods -->
     <script src="./js/lib/prototypes.js" type="module"></script>
+    <!-- adding the main js file called app.js setting type to module for imports -->
     <script src="./js/app.js" type="module"></script>
   </body>
 </html>

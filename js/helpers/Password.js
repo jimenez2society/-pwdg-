@@ -1,5 +1,6 @@
 export default class Password {
   constructor(trueOptions, length) {
+    // setting initial properties
     this.trueOptions = trueOptions;
     this.length = length;
     this.allOptions = {
@@ -8,7 +9,7 @@ export default class Password {
       numeric: "0123456789",
       specials: `~!@#$%^&*()_+=}{[]|/\\?'",.<>`,
     };
-
+    // errors is initially null until
     this.errors = null;
   }
   generate() {
@@ -16,6 +17,7 @@ export default class Password {
       .map((option) => this.allOptions[option])
       .join("");
     const formError = (msg) => {
+      // sets this error to an object with a property of errMsg and passing the param
       this.errors = { errMsg: msg };
       return this.errors;
     };
@@ -28,13 +30,9 @@ export default class Password {
 
     // checking to see if the user input for length is less than 8 or greater than 128
     if (this.length < 8) {
-      this.errors = {
-        errMsg: "Length should be greater than 8 and an integer",
-      };
-      return this.errors;
+      return formError("Length should be greater than 8 and an integer");
     } else if (this.length > 128) {
-      this.errors = { errMsg: "Length should be less than 128" };
-      return this.errors;
+      return formError("Length should be less than 128");
     } else {
       this.errors = null;
       // loops as long as the length of "this.length" which is the length that the user inputs then pushes the value that the method "randomize" returns

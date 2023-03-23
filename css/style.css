@@ -13,6 +13,7 @@
 
   --border-round: 500px;
 }
+/* css resets */
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +44,8 @@ textarea {
   font-family: var(--font-family-main);
 }
 
+/* giving main container width of 80% and padding of 2rem and centering it with margin 0 auto to give some spacing on the sides */
+
 .container {
   width: 80%;
   height: 100%;
@@ -50,24 +53,18 @@ textarea {
   padding: 2rem;
   padding-top: 0;
 }
-.header {
-  display: flex;
-  position: relative;
-  width: max-content;
-}
 
+/* logo is just text so we give some unique styling with text-shadow */
+/* giving display block to allow for padding */
 .header .logo {
   text-shadow: 0 2px 5px rgb(255, 134, 245);
   font-size: 2.4rem;
   padding: 1rem 0;
-  display: flex;
-  width: max-content;
+  display: block;
   color: rgb(65, 65, 65);
-  border-radius: var(--border-round);
   font-family: "Sono";
-  align-items: center;
-  position: relative;
 }
+/* stying generate button */
 #generateButton {
   background: none;
   border: none;
@@ -76,6 +73,8 @@ textarea {
   margin-top: 2rem;
   border-radius: 4px;
 }
+
+/* styling the full container of the generator  */
 .generator {
   background-color: var(--background-theme-light-secondary);
   padding: 1.2rem;
@@ -85,6 +84,8 @@ textarea {
   border-radius: 4px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.274);
 }
+
+/* styling the initial positioning of the toast with transition */
 .toast {
   background-color: white;
   width: 380px;
@@ -100,15 +101,20 @@ textarea {
   transform: translateX(-200%);
   transition: 0.4s cubic-bezier(0.15, 0.62, 0.53, 0.96);
 }
+/* toast when successful */
 .toast.toast--success {
   border-left: 10px solid rgb(77, 223, 77);
 }
+/* toast when not successful */
 .toast.toast--error {
   border-left: 10px solid rgb(255, 74, 61);
 }
+/* when active class is set we set transition back to 0% to bring it on screen */
 .toast.active {
   transform: translateX(0%);
 }
+
+/* styling the exit button on toast */
 .toast--cancel {
   position: absolute;
   top: 8px;
@@ -117,6 +123,8 @@ textarea {
   font-weight: bolder;
   cursor: pointer;
 }
+
+/* splitting the content into two columns with grid */
 .generator__content {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -138,7 +146,7 @@ textarea {
   font-weight: 200;
   margin-bottom: 3.2rem;
 }
-
+/* giving the initial state styles of the checkboxes labels*/
 .checkbox {
   display: inline-block;
   border: 1px solid rgba(36, 36, 36, 0.63);
@@ -149,14 +157,9 @@ textarea {
   box-shadow: 0px 0px 8px transparent;
   cursor: pointer;
 }
+/* hiding the actual checkbox for styling purposes */
 .checkbox--hidden {
   display: none;
-}
-.error {
-  color: rgba(255, 25, 25, 0.801);
-  visibility: visible;
-  opacity: 1;
-  transition: 5s;
 }
 
 .formGroup {
@@ -176,25 +179,28 @@ input[type="number"] {
   border: var(--border-theme-light);
 }
 
-.formGroup:hover > .checkbox {
-  border: 1px solid rgba(26, 1, 23, 0.61);
-}
-
 .formGroup input[type="number"] {
   margin-bottom: 2rem;
 }
 .formGroup:not(input[type="number"]):not(:last-child) {
   margin-bottom: 1rem;
 }
+
+/* giving the text next to check box an inital disabled color */
 .checkbox + p {
   color: rgba(150, 150, 150, 0.664);
 }
+
+/* when checked we set the text next to check box to a darker color to indicate active */
 .checkbox--hidden:checked + .checkbox + p {
   color: var(--background-theme-dark);
 }
+
+/* when checked we set the check box label to have a box shadow for a more smooth look when active */
 .checkbox--hidden:checked + .checkbox {
   box-shadow: 0px 0px 8px rgba(255, 134, 245, 0.61);
 }
+/* when checked we set the check box label to have an ::after style as the inner part of the check box to indicate active */
 .checkbox--hidden:checked + .checkbox::after {
   content: "";
   width: 12px;
