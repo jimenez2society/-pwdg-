@@ -19,13 +19,13 @@
 
 ### **The Password class**
 
-#### You will find the class in the `Password.js` file. It allows all of the functionaliy to generate a randomized password
+#### You will find the class in the `Password.js` file. It makes up all of the functionaliy to generate a randomized password
 
 <br/>
 
-#### 1. The `Password` instance takes two parameters `trueOptions` which needs be an array, there is no error handling on this but it won't work if it's not an array and `length` which is going to only a number.
+#### 1. The `Password` instance takes two parameters `trueOptions` which needs be an array, there is no error handling on this but it won't work if it's not an array and `length` which is going to be only a number.
 
-#### 2. Then we have two interal properties, `allOptions` which is an object of the different options a user can use in their password and `errors` which is initially set to `null` until later told otherwise.
+#### 2. Then we have two internal properties, `allOptions` which is an object of the different options a user can use in their password and `errors` which is initially set to `null` until later told otherwise.
 
 <br/>
 
@@ -54,7 +54,7 @@ class Password{
 
 #### 5. We the set a variable `genPassword` to and empty array for later use
 
-#### 6. The `formError` function is used to set the `this.errors` and object with a property of `errMsg`. When this happens `this.errors` will no longer be `null`
+#### 6. The `formError` function is used to set the `this.errors` to an object with a property of `errMsg`. When this happens `this.errors` will no longer be `null`
 
 <br/>
 
@@ -75,11 +75,11 @@ generate(){
 
 #### 7. Now lets see the conditionals in action. These a very self explanatory if you've worked with javascript so I'm not going to go into detail but there is one thing that I want to point out.
 
-#### 8. Notice how I can call `.isEmpty()` on the `trueOptions` this is because I set a method on `Array.prototype` to allow for arrays to allow to check itself for occupancy. Check the file `./lib/prototypes.js` for more info
+#### 8. Notice how I can call `.isEmpty()` on the `trueOptions` array, this is because I set a method on `Array.prototype` so arrays can check itself for occupancy. Check the file `./lib/prototypes.js` for more info
 
 #### 9. Then we just check to make sure length is less than 8 and greater than 128
 
-#### 10. If everything passes then we set `this.errors = null` then loop until we reach the specified `length` number, pushing a random character to the `genPassword` array we set earlier with the `this.randomize` method
+#### 10. If everything passes then we set `this.errors = null` then loop until we reach the specified `length` number, pushing a random character to the `genPassword` with each loop using the `this.randomize` method to randomize the characters being pushed
 
 <br/>
 
@@ -122,13 +122,14 @@ radomize(string) {
     return string.split("")[Math.floor(Math.random() * string.length)];
   }
 ```
+
 <br/>
 
 ### **The query function**
 
 #### #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
 
-#### In my code you will see this function named `query`. You can find how this function was built in the `DomHelper.js` file I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
+#### In my code you will see this function named `query`. You can find how this function was built in `./js/lib/DomHelper.js` I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
 
 <br/>
 
