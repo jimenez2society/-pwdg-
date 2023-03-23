@@ -91,12 +91,6 @@ const query = (element) => {
 ##### Example of how `prop` would equal `click`:
 
 ```
-obj.prop
-```
-
-##### With `query` example
-
-```
 query('.box').click
 ```
 
@@ -105,16 +99,12 @@ query('.box').click
 ##### Example
 
 ```
-obj.prop(eventCallback)
-```
-
-##### With `query` example
-
-```
 query('.box').click( (e) => console.log(e.target) )
 ```
 
 #### 8. Then we return `Reflect.get(obj,prop)`, this is like property accessor stynax but as a function as stated [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get).
+
+##### Example of how `Reflect.get(obj,prop)` would be used:
 
 ```
 // if we had an object called myNewObject
@@ -136,7 +126,9 @@ Reflect.get(myNewObject,'name')
 
 - #### Overall I had fun creating this function to help me with my DOM manipulation in this app. I was able to learn more about how a javascript proxy is used and what it can do. I look forward to learning more about it and continue my research on the pros and cons of a javascript proxy
 
-## This app is responsive to mobile. Here is a live demo [!pwd~](https://641c05caa283f17c09d39d3e--pwdg-jimenez2society.netlify.app)
+### This app is responsive to mobile.
+
+[Link to live demo](https://641c05caa283f17c09d39d3e--pwdg-jimenez2society.netlify.app)
 
 ## Here is a quick look at the UI of this app:
 
