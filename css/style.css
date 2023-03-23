@@ -166,7 +166,7 @@ textarea {
   .toast {
     background-color: white;
     width: 80vw;
-    top: 8%;
+    top: 6rem;
     left: 5%;
   }
 }

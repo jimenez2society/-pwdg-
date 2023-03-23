@@ -22,19 +22,12 @@
 #### In my code you will see this function named `query`. I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
 
 <br/>
-<br/>
 
 #### 1. We pass in an `element` through the `query` function. Then we select that element with `querySelector` setting it to `el`
 
-<br/>
-
 #### 2. We create a variable named `queryProxy` setting it to a new `Proxy`. In this proxy we pass in two parameters which are both objects
 
-<br/>
-
 #### 3. The first object will be the `el` object that we get from `querySelector`, also know as our target
-
-<br/>
 
 #### 4. The second parmeter is for our `set` and `get` functionality. Which is an object as well, also know as our handler.
 
@@ -71,7 +64,7 @@ const query = (element) => {
 <br/>
 <br/>
 
-#### 5. We now start adding the logic to out `get`
+#### 5. We now start adding the logic to out `get`:
 
  <br/>
 
@@ -93,11 +86,9 @@ const query = (element) => {
 
 ```
 
-#### 6. We are checking if `prop` === `click`, example use:
+#### 6. We are checking if `prop` === `click`
 
-<br/>
-
-##### Example
+##### Example of how `prop` would equal `click`:
 
 ```
 obj.prop
@@ -110,8 +101,6 @@ query('.box').click
 ```
 
 #### 7. if `prop` === `click` is true it returns a function that we can pass a parameter of an event callback. Then add an event listener to the current element, example use:
-
-<br/>
 
 ##### Example
 
@@ -146,6 +135,8 @@ Reflect.get(myNewObject,'name')
 - #### I didn't go over the `set` property because I didn't use it in this project but if you are curious here is link that goes in detail [MDN handler.set()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set)
 
 - #### Overall I had fun creating this function to help me with my DOM manipulation in this app. I was able to learn more about how a javascript proxy is used and what it can do. I look forward to learning more about it and continue my research on the pros and cons of a javascript proxy
+
+## This app is responsive to mobile. Here is a live demo [!pwd~](https://641c05caa283f17c09d39d3e--pwdg-jimenez2society.netlify.app)
 
 ## Here is a quick look at the UI of this app:
 
