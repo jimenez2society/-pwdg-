@@ -210,7 +210,7 @@ query('.box').click
 
 ```
 
-#### 7. if `prop` === `click` is true it returns a function that we can pass a parameter of an event callback. Then add an event listener to the current element, example use:
+#### 7. if `prop` === `click` then it returns a function that we can pass a parameter of an event callback. Then add an event listener to the current element, example use:
 
 ##### Example
 
@@ -254,7 +254,3 @@ Reflect.get(myNewObject,'name')
 ## Here is a quick look at the UI of this app:
 
 ![Screenshot of the pwdg application](./assets/pwdgScreenshot.png)
-
-```
-
-```
