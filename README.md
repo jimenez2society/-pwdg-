@@ -17,9 +17,11 @@
 
 ## An inside look
 
+#### \* **READ** — Before we get started on this section I would just like to express that this is way more code needed to build this simple password generator with the functionality that it has now. However, the reason I took so many extra steps was to be able to practice prototypes, object methods and mainly to practice javascript proxies.
+
 ### **The Password class**
 
-#### You will find the class in the `Password.js` file. It makes up all of the functionaliy to generate a randomized password
+#### You will find this class in the `Password.js` file. It makes up all of the functionaliy to generate a randomized password
 
 <br/>
 
@@ -48,11 +50,11 @@ class Password{
 <br/>
 <br/>
 
-#### 3. With the class `Password` we have two methods `generate` and `randomize`. Let's talk about `generate`
+#### 3. With the class `Password`, we have two methods `generate` and `randomize`. Let's talk about `generate`
 
 #### 4. The `generate` method maps through all of the items in `trueOptions` as `option` and accesses the properties in `allOptions` that correspond with each `option` then calls `.join("")` on the array to turn it into one whole string.
 
-#### 5. We the set a variable `genPassword` to and empty array for later use
+#### 5. We then set a variable `genPassword` to and empty array for later use
 
 #### 6. The `formError` function is used to set the `this.errors` to an object with a property of `errMsg`. When this happens `this.errors` will no longer be `null`
 
@@ -75,11 +77,11 @@ generate(){
 
 #### 7. Now lets see the conditionals in action. These a very self explanatory if you've worked with javascript so I'm not going to go into detail but there is one thing that I want to point out.
 
-#### 8. Notice how I can call `.isEmpty()` on the `trueOptions` array, this is because I set a method on `Array.prototype` so arrays can check itself for occupancy. Check the file `./lib/prototypes.js` for more info
+#### 8. Notice how I can call `.isEmpty()` on the `trueOptions` array, this is because I set a method on `Array.prototype` so that arrays can check itself for occupancy. Check the file `./lib/prototypes.js` for more info
 
-#### 9. Then we just check to make sure length is less than 8 and greater than 128
+#### 9. Then we just check that length is less than 8 and greater than 128
 
-#### 10. If everything passes then we set `this.errors = null` then loop until we reach the specified `length` number, pushing a random character to the `genPassword` with each loop using the `this.randomize` method to randomize the characters being pushed
+#### 10. If everything passes then we set `this.errors = null` then loop until we reach the specified `length` number. Pushing a random character to the `genPassword` array with each loop using the `this.randomize` method to randomize the characters being pushed.
 
 <br/>
 
@@ -127,13 +129,13 @@ radomize(string) {
 
 ### **The query function**
 
-#### #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`
+#### #DISCLAIMER — This only works on one DOM element at a time because I am only using `querySelector()` and not allowing for both `querySelector()` and `querySelectorAll()`.
 
-#### In my code you will see this function named `query`. You can find how this function was built in `./js/lib/DomHelper.js` I've learned about proxy in javascript and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
+#### In my code you will see this function named `query`. You can find out how this function was built in `./js/lib/DomHelper.js` I've learned about javscript proxies and it has been very interesting to me so I thought I would use it in this app, I will give a small example of how it is used in this project, take a look!
 
 <br/>
 
-#### 1. We pass in an `element` through the `query` function. Then we select that element with `querySelector` setting it to `el`
+#### 1. We pass in an `element` parameter through the `query` function. Inside the function, we select that element with `querySelector` setting it to `el`
 
 #### 2. We create a variable named `queryProxy` setting it to a new `Proxy`. In this proxy we pass in two parameters which are both objects
 
@@ -243,9 +245,14 @@ Reflect.get(myNewObject,'name')
 
 ### Overview
 
+- #### Again, this is probably alot more code than it needed to be but I just wanted to test out proxies mainly!
 - #### I didn't go over the `set` property because I didn't use it in this project but if you are curious here is link that goes in detail [MDN handler.set()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/Proxy/set)
 
 - #### Overall I had fun creating this function to help me with my DOM manipulation in this app. I was able to learn more about how a javascript proxy is used and what it can do. I just know that there is so much more that can be done with a javascript proxy and can't wait to learn more
+
+### Bugs
+
+- If you create an error or create password successfully you will generate a toast notification. The toast disappears after 4 seconds and if you generated another toast 2 seconds after the original toast then the second toast will disappear within 2 seconds.
 
 ### This app is responsive to mobile.
 
