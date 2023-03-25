@@ -115,7 +115,7 @@ generate(){
 <br/>
 <br/>
 
-#### 11. The `randomize` is a simple function inside the `Password` class and is only used in the class itself.
+#### 11. The `randomize` method is a simple method inside the `Password` class and is only used in the class itself.
 
 <br/>
 
@@ -135,11 +135,11 @@ radomize(string) {
 
 <br/>
 
-#### 1. We pass in an `element` parameter through the `query` function. Inside the function, we select that element with `querySelector` setting it to `el`
+#### 1. We create the `query` function with a parameter named `element` where we will pass in a class, id, or tag of an element. Inside the function, we select that element with `querySelector` setting it to `el`
 
 #### 2. We create a variable named `queryProxy` setting it to a new `Proxy`. In this proxy we pass in two parameters which are both objects
 
-#### 3. The first object will be the `el` object that we get from `querySelector`, also know as our target
+#### 3. The first parameter is known as our target and will be the `el` object that we get from `querySelector`
 
 #### 4. The second parmeter is for our `set` and `get` functionality. Which is an object as well, also know as our handler.
 
