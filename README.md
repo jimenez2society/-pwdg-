@@ -252,7 +252,7 @@ Reflect.get(myNewObject,'name')
 
 ### Bugs
 
-- If you create an error or create password successfully you will generate a toast notification. The toast disappears after 4 seconds and if you generated another toast 2 seconds after the original toast then the second toast will disappear within 2 seconds.
+- If you generate an error or create a password successfully you will generate a toast notification. The toast is built to disappear after 4 seconds and within those 4 seconds if you were to generate another toast then the timer will not reset. So the new toast will only last for the remaining time of the previous toast
 
 ### This app is responsive to mobile.
 
