@@ -212,7 +212,7 @@ query('.box').click
 
 ```
 
-#### 7. if `prop` === `click` then it returns a function that we can pass a parameter of an event callback. Then add an event listener to the current element, example use:
+#### 7. if `prop` === `click` then it returns the prop `click` as a function that we can pass a parameter of an event callback. Then add an event listener to the current element, example use:
 
 ##### Example
 
