@@ -17,7 +17,7 @@
 
 ## An inside look
 
-#### \* **READ** — Before we get started on this section I would just like to express that this is way more code needed to build this simple password generator with the functionality that it has now. However, the reason I took so many extra steps was to be able to practice prototypes, object methods and mainly to practice javascript proxies.
+#### \* **READ** — Before we get started on this section I would just like to express that this is way more code than I needed to write to build this simple password generator. However, the reason I took so many extra steps was to be able to practice prototypes, object methods and mainly to practice javascript proxies.
 
 ### **The Password class**
 
