@@ -147,8 +147,8 @@ radomize(string) {
 
 ```
 
-const query = (element) => {
-    const el = document.querySelector(element)
+const query = (selector) => {
+    const el = document.querySelector(selector)
     let queryProxy = new Proxy(el,{})
 }
 
@@ -165,8 +165,8 @@ const query = (element) => {
 
 ```
 
-const query = (element) => {
-    const el = document.querySelector(element)
+const query = (selector) => {
+    const el = document.querySelector(selector)
     let queryProxy = new Proxy(el,{
         get:(obj,prop,reciever)=>{},
         set:(obj,prop,value)=>{}
@@ -184,8 +184,8 @@ const query = (element) => {
 
 ```
 
-const query = (element) => {
-    const el = document.querySelector(element)
+const query = (selector) => {
+    const el = document.querySelector(selector)
     let queryProxy = new Proxy(el,{
         get:(obj,prop,reciever)=>{
             if(prop === 'click'){
