@@ -1,5 +1,5 @@
 //  *** DISCLAIMER *** This only works on one element at a time.
-
+// element is actually selector eg ".some-class" "#some-id" or some element tag "div"
 const query = (element) => {
   //setting el to get an element that is passed through the parameter of query
   let el = document.querySelector(element);
